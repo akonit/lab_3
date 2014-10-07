@@ -1,0 +1,24 @@
+<p>
+  <h1>Факультет №<%= @faculty.number %></h1>
+  <strong>Название:</strong>
+  <%= @faculty.name %>&nbsp;&nbsp;
+  <%= link_to 'Редактировать', edit_faculty_path(@faculty) %>&nbsp;&nbsp;
+  <%= link_to 'Добавить группу', new_group_path(:faculty_id => @faculty.id)%><br><br>
+</p>
+
+<strong>Группы:</strong><br><br>
+
+<% @faculty.groups.each do |group| %>
+	    <tr>
+	      <td><%= group.cource %></td>
+	      <td><%= group.name %></td>
+	      <td><%= link_to 'Просмотреть', group_path(group, :faculty_id => @faculty.id) %></td>
+	      <td><%= link_to 'Редактировать', edit_group_path(group, :faculty_id => @faculty.id) %></td>
+	      <td><%= link_to 'Удалить', group_path(group, :faculty_id => @faculty.id),
+	                    method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+	    </tr>
+    <br>
+<% end %>
+
+<br><br>
+<%= link_to 'К списку факультетов', facultys_path %>

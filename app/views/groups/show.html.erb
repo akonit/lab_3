@@ -1,0 +1,127 @@
+<p>
+  <h1>Группа <%= @group.name%></h1>
+  <strong>Курс:</strong>
+  <%= @group.cource %><br>
+</p>
+
+<strong>Расписание:</strong>&nbsp;&nbsp;
+<%= link_to 'Редактировать', edit_group_path(:id => @group.id, :faculty_id => @faculty.id) %>&nbsp;&nbsp;
+<%= link_to 'Добавить пару', new_lesson_path(:group_id => @group.id, :faculty_id => @faculty.id)%><br><br>
+ 
+<strong>Monday:</strong><br>
+<% @group.lessons.each do |lesson| %> 
+    <% if lesson.day == 1 %>
+        &nbsp;&nbsp;
+	    <tr>
+	      <td><%= lesson.name %></td>
+	      <td><%= lesson.teacher %></td>
+	      <td><%= lesson.start %></td>
+	      <td><%= lesson.end %></td>
+	      <td><%= @days[lesson.day - 1] %></td>
+	      <td><%= link_to 'Просмотреть', lesson_path(lesson, :group_id => @group.id, :faculty_id => @faculty.id) %></td>
+	      <td><%= link_to 'Редактировать', edit_lesson_path(lesson, :group_id => @group.id, :faculty_id => @faculty.id) %></td>
+	      <td><%= link_to 'Удалить', lesson_path(lesson, :group_id => @group.id, :faculty_id => @faculty.id),
+	                    method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+	    </tr>
+        <br>
+    <% end %> 
+<% end %>
+
+<strong>Tuesday:</strong><br>
+<% @group.lessons.each do |lesson| %> 
+    <% if lesson.day == 2 %>
+        &nbsp;&nbsp;
+	    <tr>
+	      <td><%= lesson.name %></td>
+	      <td><%= lesson.teacher %></td>
+	      <td><%= lesson.start %></td>
+	      <td><%= lesson.end %></td>
+	      <td><%= @days[lesson.day - 1] %></td>
+	      <td><%= link_to 'Просмотреть', lesson_path(lesson, :group_id => @group.id, :faculty_id => @faculty.id) %></td>
+	      <td><%= link_to 'Редактировать', edit_lesson_path(lesson, :group_id => @group.id, :faculty_id => @faculty.id) %></td>
+	      <td><%= link_to 'Удалить', lesson_path(lesson, :group_id => @group.id, :faculty_id => @faculty.id),
+	                    method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+	    </tr>
+        <br>
+    <% end %>
+<% end %>
+
+<strong>Wednesday:</strong><br>
+<% @group.lessons.each do |lesson| %> 
+    <% if lesson.day == 3 %>
+        &nbsp;&nbsp;
+	    <tr>
+	      <td><%= lesson.name %></td>
+	      <td><%= lesson.teacher %></td>
+	      <td><%= lesson.start %></td>
+	      <td><%= lesson.end %></td>
+	      <td><%= @days[lesson.day - 1] %></td>
+	      <td><%= link_to 'Просмотреть', lesson_path(lesson, :group_id => @group.id, :faculty_id => @faculty.id) %></td>
+	      <td><%= link_to 'Редактировать', edit_lesson_path(lesson, :group_id => @group.id, :faculty_id => @faculty.id) %></td>
+	      <td><%= link_to 'Удалить', lesson_path(lesson, :group_id => @group.id, :faculty_id => @faculty.id),
+	                    method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+	    </tr>
+        <br>
+    <% end %>
+<% end %>
+
+<strong>Thursday:</strong><br>
+<% @group.lessons.each do |lesson| %> 
+    <% if lesson.day == 4 %>
+        &nbsp;&nbsp;
+	    <tr>
+	      <td><%= lesson.name %></td>
+	      <td><%= lesson.teacher %></td>
+	      <td><%= lesson.start %></td>
+	      <td><%= lesson.end %></td>
+	      <td><%= @days[lesson.day - 1] %></td>
+	      <td><%= link_to 'Просмотреть', lesson_path(lesson, :group_id => @group.id, :faculty_id => @faculty.id) %></td>
+	      <td><%= link_to 'Редактировать', edit_lesson_path(lesson, :group_id => @group.id, :faculty_id => @faculty.id) %></td>
+	      <td><%= link_to 'Удалить', lesson_path(lesson, :group_id => @group.id, :faculty_id => @faculty.id),
+	                    method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+	    </tr>
+        <br>
+    <% end %>
+<% end %>
+
+<strong>Friday:</strong><br>
+<% @group.lessons.each do |lesson| %> 
+    <% if lesson.day == 5 %>
+        &nbsp;&nbsp;
+	    <tr>
+	      <td><%= lesson.name %></td>
+	      <td><%= lesson.teacher %></td>
+	      <td><%= lesson.start %></td>
+	      <td><%= lesson.end %></td>
+	      <td><%= @days[lesson.day - 1] %></td>
+	      <td><%= link_to 'Просмотреть', lesson_path(lesson, :group_id => @group.id, :faculty_id => @faculty.id) %></td>
+	      <td><%= link_to 'Редактировать', edit_lesson_path(lesson, :group_id => @group.id, :faculty_id => @faculty.id) %></td>
+	      <td><%= link_to 'Удалить', lesson_path(lesson, :group_id => @group.id, :faculty_id => @faculty.id),
+	                    method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+	    </tr>
+        <br>
+    <% end %>
+<% end %>
+
+<strong>Saturday:</strong><br>
+<% @group.lessons.each do |lesson| %> 
+    <% if lesson.day == 6 %>
+        &nbsp;&nbsp;
+	    <tr>
+	      <td><%= lesson.name %></td>
+	      <td><%= lesson.teacher %></td>
+	      <td><%= lesson.start %></td>
+	      <td><%= lesson.end %></td>
+	      <td><%= @days[lesson.day - 1] %></td>
+	      <td><%= link_to 'Просмотреть', lesson_path(lesson, :group_id => @group.id, :faculty_id => @faculty.id) %></td>
+	      <td><%= link_to 'Редактировать', edit_lesson_path(lesson, :group_id => @group.id, :faculty_id => @faculty.id) %></td>
+	      <td><%= link_to 'Удалить', lesson_path(lesson, :group_id => @group.id, :faculty_id => @faculty.id),
+	                    method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+	    </tr>
+        <br>
+    <% end %>
+<% end %>
+<br>
+<br>
+
+<%= link_to 'Вернуться к факультету', faculty_path(@faculty) %>

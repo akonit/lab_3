@@ -1,0 +1,41 @@
+<h1>Добавить пару</h1>
+
+<%= form_for :lesson, url: lessons_path(:faculty_id => @faculty.id, :group_id => @group.id) do |f| %>
+  <p>
+    <%= f.label :предмет %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :преподаватель %><br>
+    <%= f.text_field :teacher %>
+  </p>
+  
+  <p>
+    <%= f.label :день_недели %><br>
+    <%= f.select :day, options_for_select([["Понедельник", 1],
+        ["Вторник", 2],
+        ["Среда", 3],
+        ["Четверг", 4],
+        ["Пятница", 5],
+        ["Суббота", 6]]) %>
+  </p>
+ 
+  <p>
+    <%= f.label :начало_пары %><br>
+    <%= f.text_field :start, :placeholder => "hh:mm" %>
+  </p>
+ 
+  <p>
+    <%= f.label :окончание_пары %><br>
+    <%= f.text_field :end, :placeholder => "hh:mm" %>
+  </p>
+
+  <%= f.hidden_field :group_id, :value => @group.id%>
+ 
+  <p>
+    <%= f.submit :сохранить%>
+  </p>
+<% end %>
+
+<%= link_to 'Назад', group_path(@group, :faculty_id => @faculty.id) %>

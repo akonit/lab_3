@@ -1,0 +1,19 @@
+<h1>Редактирование факультета</h1>
+ 
+<%= form_for :faculty, url: faculty_path(@faculty), method: :patch do |f| %>
+  <p>
+    <%= f.label :номер %><br>
+    <%= f.text_field :number %>
+  </p>
+ 
+  <p>
+    <%= f.label :название %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.submit :обновить%>
+  </p>
+<% end %>
+
+<%= link_to 'Назад', facultys_path %>

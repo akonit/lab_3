@@ -1,0 +1,19 @@
+<h1>Добавить факультет</h1>
+
+<%= form_for :faculty, url: facultys_path do |f| %>
+  <p>
+    <%= f.label :номер %><br>
+    <%= f.text_field :number %>
+  </p>
+ 
+  <p>
+    <%= f.label :название %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.submit :сохранить%>
+  </p>
+<% end %>
+
+<%= link_to 'Назад', facultys_path %>

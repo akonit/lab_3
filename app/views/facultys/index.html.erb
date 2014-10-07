@@ -1,0 +1,21 @@
+<h1>Все факультеты</h1>
+<%= link_to 'Создать факультет', new_faculty_path %>&nbsp;&nbsp;
+<%= link_to 'Поиск расписания по группам', search_by_group_path %><br><br>
+
+<table>
+  <tr>
+    <th>Номер</th>
+    <th>Название</th>
+  </tr>
+ 
+  <% @facultys.each do |faculty| %>
+    <tr>
+      <td><%= faculty.number %></td>
+      <td><%= faculty.name %></td>
+      <td><%= link_to 'Просмотреть', faculty_path(faculty) %></td>
+      <td><%= link_to 'Редактировать', edit_faculty_path(faculty) %></td>
+      <td><%= link_to 'Удалить', faculty_path(faculty),
+                    method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+    </tr>
+  <% end %>
+</table>

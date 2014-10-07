@@ -1,0 +1,19 @@
+<h1>Добавить группу</h1>
+
+<%= form_for :group, url: groups_path(:faculty_id => @faculty.id) do |f| %>
+  <p>
+    <%= f.label :курс %><br>
+    <%= f.text_field :cource %>
+  </p>
+ 
+  <p>
+    <%= f.label :название %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.submit :сохранить%>
+  </p>
+<% end %>
+
+<%= link_to 'Назад', faculty_path(@faculty) %>

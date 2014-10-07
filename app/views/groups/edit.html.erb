@@ -1,0 +1,19 @@
+<h1>Редактирование группы</h1>
+ 
+<%= form_for :group, url: group_path(@group, :faculty_id => @faculty.id), method: :patch do |f| %>
+  <p>
+    <%= f.label :название %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :курс%><br>
+    <%= f.text_field :cource %>
+  </p>
+ 
+  <p>
+    <%= f.submit :обновить%>
+  </p>
+<% end %>
+
+<%= link_to 'Назад', group_path(@group, :faculty_id => @faculty.id) %>

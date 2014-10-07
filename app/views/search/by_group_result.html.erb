@@ -1,0 +1,102 @@
+<h1>Результат поиска</h1>
+<%= link_to 'Перейти к списку факультетов', facultys_path %>&nbsp;&nbsp;&nbsp;
+<%= link_to 'Поиск расписания по группам', search_by_group_path %><br><br>
+
+<p>
+  <h4>Группа <%= @group.name%></h4>
+  <strong>Курс:</strong>
+  <%= @group.cource %><br>
+</p>
+
+<strong>Расписание:</strong><br><br>
+
+<strong>Monday:</strong><br>
+<% @group.lessons.each do |lesson| %> 
+    <% if lesson.day == 1 %>
+        &nbsp;&nbsp;
+      <tr>
+        <td><%= lesson.name %></td>
+        <td><%= lesson.teacher %></td>
+        <td><%= lesson.start %></td>
+        <td><%= lesson.end %></td>
+        <td><%= @days[lesson.day - 1] %></td>
+      </tr>
+        <br>
+    <% end %> 
+<% end %>
+
+<strong>Tuesday:</strong><br>
+<% @group.lessons.each do |lesson| %> 
+    <% if lesson.day == 2 %>
+        &nbsp;&nbsp;
+      <tr>
+        <td><%= lesson.name %></td>
+        <td><%= lesson.teacher %></td>
+        <td><%= lesson.start %></td>
+        <td><%= lesson.end %></td>
+        <td><%= @days[lesson.day - 1] %></td>
+      </tr>
+        <br>
+    <% end %>
+<% end %>
+
+<strong>Wednesday:</strong><br>
+<% @group.lessons.each do |lesson| %> 
+    <% if lesson.day == 3 %>
+        &nbsp;&nbsp;
+      <tr>
+        <td><%= lesson.name %></td>
+        <td><%= lesson.teacher %></td>
+        <td><%= lesson.start %></td>
+        <td><%= lesson.end %></td>
+        <td><%= @days[lesson.day - 1] %></td>
+      </tr>
+        <br>
+    <% end %>
+<% end %>
+
+<strong>Thursday:</strong><br>
+<% @group.lessons.each do |lesson| %> 
+    <% if lesson.day == 4 %>
+        &nbsp;&nbsp;
+      <tr>
+        <td><%= lesson.name %></td>
+        <td><%= lesson.teacher %></td>
+        <td><%= lesson.start %></td>
+        <td><%= lesson.end %></td>
+        <td><%= @days[lesson.day - 1] %></td>
+      </tr>
+        <br>
+    <% end %>
+<% end %>
+
+<strong>Friday:</strong><br>
+<% @group.lessons.each do |lesson| %> 
+    <% if lesson.day == 5 %>
+        &nbsp;&nbsp;
+      <tr>
+        <td><%= lesson.name %></td>
+        <td><%= lesson.teacher %></td>
+        <td><%= lesson.start %></td>
+        <td><%= lesson.end %></td>
+        <td><%= @days[lesson.day - 1] %></td>
+      </tr>
+        <br>
+    <% end %>
+<% end %>
+
+<strong>Saturday:</strong><br>
+<% @group.lessons.each do |lesson| %> 
+    <% if lesson.day == 6 %>
+        &nbsp;&nbsp;
+      <tr>
+        <td><%= lesson.name %></td>
+        <td><%= lesson.teacher %></td>
+        <td><%= lesson.start %></td>
+        <td><%= lesson.end %></td>
+        <td><%= @days[lesson.day - 1] %></td>
+      </tr>
+        <br>
+    <% end %>
+<% end %>
+</table>

@@ -1,0 +1,39 @@
+<h1>Редактирование пары</h1>
+ 
+<%= form_for :lesson, url: lesson_path(@lesson, :faculty_id => @faculty.id, :group_id => @group.id), method: :patch do |f| %>
+  <p>
+    <%= f.label :предмет %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :преподаватель %><br>
+    <%= f.text_field :teacher %>
+  </p>
+  
+  <p>
+    <%= f.label :день_недели %><br>
+    <%= f.select :day, options_for_select([["Понедельник", 1],
+        ["Вторник", 2],
+        ["Среда", 3],
+        ["Четверг", 4],
+        ["Пятница", 5],
+        ["Суббота", 6]]) %>
+  </p>
+ 
+  <p>
+    <%= f.label :начало_пары %><br>
+    <%= f.text_field :start, :placeholder => "hh:mm" %>
+  </p>
+ 
+  <p>
+    <%= f.label :окончание_пары %><br>
+    <%= f.text_field :end, :placeholder => "hh:mm" %>
+  </p>
+ 
+  <p>
+    <%= f.submit :обновить %>
+  </p>
+<% end %>
+
+<%= link_to 'Назад', lesson_path(@lesson, :faculty_id => @faculty.id, :group_id => @group.id) %>
